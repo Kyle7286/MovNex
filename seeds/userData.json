@@ -1,0 +1,38 @@
+[
+    {
+        "first_name": "Admin",
+        "last_name": "user",
+        "email": "admin@admin.com",
+        "password": "password1234"
+    },
+    {
+        "first_name": "Demo",
+        "last_name": "User",
+        "email": "demo@demo.com",
+        "password": "password1234"
+    },
+    {
+        "first_name": "Brandon",
+        "last_name": "Haley",
+        "email": "brandon@magichyenas.com",
+        "password": "password1234"
+    },
+    {
+        "first_name": "Devante",
+        "last_name": "Johns",
+        "email": "devante@magichyenas.com",
+        "password": "password1234"
+    },
+    {
+        "first_name": "Juan",
+        "last_name": "Echeverry",
+        "email": "juan@magichyenas.com",
+        "password": "password1234"
+    },
+    {
+        "first_name": "Jordan",
+        "last_name": "Mitchell",
+        "email": "jordan@magichyenas.com",
+        "password": "password1234"
+    }
+]
