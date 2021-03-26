@@ -21,13 +21,14 @@ Movie.init(
             allowNull: false,
         },
         rating: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.STRING,
             allowNull: false
         },
 
         plot: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
+
         },
 
         genre: {
@@ -37,15 +38,13 @@ Movie.init(
 
         trailer: {
             type: DataTypes.STRING,
-            allowNull: fasle,
+            allowNull: false,
         },
 
         poster: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
-
     },
     {
         sequelize,
@@ -56,4 +55,4 @@ Movie.init(
     }
 );
 
-module.exports = Movie; 
+module.exports = Movie;
