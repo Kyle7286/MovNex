@@ -2,181 +2,181 @@
     {
         "user_id": "1",
         "movie_id": "25",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "1",
         "movie_id": "12",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "1",
         "movie_id": "2",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "1",
         "movie_id": "30",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "1",
         "movie_id": "16",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "1",
         "movie_id": "45",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "2",
         "movie_id": "1",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "2",
         "movie_id": "5",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "2",
         "movie_id": "22",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "2",
         "movie_id": "41",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "2",
         "movie_id": "8",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "2",
         "movie_id": "27",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "3",
         "movie_id": "35",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "3",
         "movie_id": "10",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "3",
         "movie_id": "19",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "3",
         "movie_id": "30",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "3",
         "movie_id": "28",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "3",
         "movie_id": "33",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "4",
         "movie_id": "6",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "4",
         "movie_id": "70",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "4",
         "movie_id": "66",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "4",
         "movie_id": "50",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "4",
         "movie_id": "55",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "4",
         "movie_id": "45",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "5",
         "movie_id": "52",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "5",
         "movie_id": "31",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "5",
         "movie_id": "23",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "5",
         "movie_id": "13",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "5",
         "movie_id": "4",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "5",
         "movie_id": "69",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "6",
         "movie_id": "51",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "6",
         "movie_id": "21",
-        "flag": "up"
+        "flag": "1"
     },
     {
         "user_id": "6",
         "movie_id": "43",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "6",
         "movie_id": "53",
-        "flag": "down"
+        "flag": "0"
     },
     {
         "user_id": "6",
         "movie_id": "14",
-        "flag": "maybe"
+        "flag": "2"
     },
     {
         "user_id": "6",
         "movie_id": "9",
-        "flag": "maybe"
+        "flag": "2"
     }
 ]
