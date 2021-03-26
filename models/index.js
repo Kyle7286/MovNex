@@ -12,7 +12,7 @@ User.belongsToMany(Movie, {
     as: 'flagged_movies'
 });
 
-Movies.belongsToMany(Users, {
+Movie.belongsToMany(User, {
     // Define the third table needed to store the foreign keys
     through: {
         model: Flag,
