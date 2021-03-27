@@ -3,8 +3,6 @@ html,body {
     background: #222;
 }
 
-
-
 .player {
     position: absolute;
     top: 0;
@@ -31,6 +29,13 @@ html,body {
     color: lightgrey;
     margin: 0.5rem 1rem;
     border-radius: 15px;
+}
+
+.brand {
+    color: #f42069;
+}
+.brand:hover {
+    color: #f42069;
 }
 
 .movie-name {
