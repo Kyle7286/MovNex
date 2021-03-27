@@ -1,16 +1,37 @@
 const router = require("express").Router();
-const { Project, User } = require("../models");
+const { Movie, User, Flag } = require("../models");
 const withAuth = require("../utils/auth");
 
+// Landing Page | http://localhost:3001/
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage", {
-      logged_in: req.session.logged_in,
-    });
+
+    // If logged in, render theater, else go to landing page
+    if (req.session.logged_in) {
+      res.redirect("theater")
+    } else {
+      res.render("landing", {
+        logged_in: req.session.logged_in,
+      });
+    }
+
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+router.get("/theater", async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      res.render("theater");
+    } else {
+      res.redirect("/");
+    }
+  } catch (e) {
+
+  }
+})
 
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
@@ -34,11 +55,12 @@ router.get("/profile", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/theater");
     return;
   }
 
   res.render("login");
 });
+
 
 module.exports = router;
