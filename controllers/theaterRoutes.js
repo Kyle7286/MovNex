@@ -1,14 +1,15 @@
 const router = require("express").Router();
 const { Movie, User, Flag } = require("../models");
-const withAuth = require("../utils/auth");
+// const withAuth = require("../utils/auth");
 const _ = require('underscore')
 
 
 
 router.get("/theater", async (req, res) => {
     try {
+        // Query all the movie data
         const movieData = await Movie.findAll({
-            attributes: ['id', 'title', 'year', 'rating', 'genre', 'trailer', 'poster',]
+            attributes: ['id', 'rating', 'genre', 'trailer', 'poster',]
         })
 
 
@@ -17,9 +18,11 @@ router.get("/theater", async (req, res) => {
                 logged_in: req.session.logged_in,
             });
         } else {
+        
         }
 
-        res.status(200).json(_.shuffle(movieData))
+        const shuffle = await _.shuffle(movieData)
+        res.status(200).json(shuffle);
 
     } catch (e) {
 
