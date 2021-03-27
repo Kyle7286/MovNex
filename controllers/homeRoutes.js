@@ -24,7 +24,9 @@ router.get("/", async (req, res) => {
 router.get("/theater", async (req, res) => {
   try {
     if (req.session.logged_in) {
-      res.render("theater");
+      res.render("theater", {
+        logged_in: req.session.logged_in,
+      });
     } else {
       res.redirect("/");
     }
