@@ -21,8 +21,8 @@ Movie.init(
             allowNull: false,
         },
         rating: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.DECIMAL,
+            allowNull: true
         },
 
         plot: {
