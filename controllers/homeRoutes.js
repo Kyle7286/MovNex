@@ -21,20 +21,6 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/theater", async (req, res) => {
-  try {
-    if (req.session.logged_in) {
-      res.render("theater", {
-        logged_in: req.session.logged_in,
-      });
-    } else {
-      res.redirect("/");
-    }
-  } catch (e) {
-
-  }
-})
-
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
