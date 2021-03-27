@@ -12,8 +12,10 @@ router.get("/", async (req, res) => {
             attributes: ['id', 'rating', 'genre', 'trailer', 'poster',]
         })
 
+        // Shuffle the array
         const shuffle = _.shuffle(movieData)
 
+        // Send the movie data
         res.status(200).json(shuffle);
 
     } catch (e) {
