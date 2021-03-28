@@ -8,10 +8,6 @@ class User extends Model {
   }
 }
 
-//CHANGE THIS MODEL.
-//Do you want to track your users by first name AND last name?
-//Do you want a username column in addition to email?
-//Is there anything else about your user your application requires you to keep track of?
 User.init(
   {
     id: {
@@ -34,7 +30,7 @@ User.init(
       unique: true,
       validate: {
         isEmail: true,
-      },
+      }
     },
     password: {
       type: DataTypes.STRING,
