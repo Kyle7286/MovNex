@@ -24,18 +24,53 @@ router.get("/", async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
+    console.log(`UserID: ${req.session.user_id}`);
+
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render("profile", {
       ...user,
       logged_in: true,
     });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Saved Movies | http://localhost:3001/profile/saved
+router.get("/profile/saved", async (req, res) => {
+  try {
+
+    console.log(`UserID: ${req.session.user_id}`);
+    // Find the logged in user based on the session ID
+    const saveData = await Flag.findAll({
+      include: [
+        {
+          model: Movie
+        },
+
+      ],
+      where: {
+        user_id: req.session.user_id,
+        flag: 1
+      }
+    });
+
+    // Serialize data
+    const movies = saveData.map((element) => element.get({ plain: true }));
+    console.log(movies);
+
+    res.render('saved', {
+      movies
+    })
+
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
