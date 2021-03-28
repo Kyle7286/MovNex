@@ -65,6 +65,7 @@ router.get("/profile/saved", async (req, res) => {
     const movies = saveData.map((element) => element.get({ plain: true }));
     console.log(movies);
 
+    // Render the list of movies
     res.render('saved', {
       movies
     })

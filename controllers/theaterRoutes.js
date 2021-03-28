@@ -14,7 +14,7 @@ router.get("/theater", async (req, res) => {
     }
 })
 
-// All Movies | 
+// All Movies | http://localhost:3001/movies/
 router.get("/movies/", async (req, res) => {
     try {
         // Query all the data from a movie title
@@ -23,7 +23,6 @@ router.get("/movies/", async (req, res) => {
         });
 
         // Serialize the movie data for rendering
-        // Serialize data so the template can read it
         const movies = movieData.map((element) => element.get({ plain: true }));
 
         console.log(movies);
@@ -37,9 +36,7 @@ router.get("/movies/", async (req, res) => {
     }
 })
 
-
-
-// Individual Movie Data | When you click on a poster
+// When you click on a poster | http://localhost:3001/movies/braveheart
 router.get("/movies/:title", async (req, res) => {
     try {
         // Query all the data from a movie title

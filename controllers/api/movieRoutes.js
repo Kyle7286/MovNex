@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Movie, User, Flag } = require("../../models");
 const _ = require('underscore')
 
+// Get Movie Array JSON | http://localhost:3001/api/movies
 router.get("/", async (req, res) => {
     try {
         // Query all the movie data
