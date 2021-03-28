@@ -1,0 +1,70 @@
+section {
+    height: 100vh;
+    /* Font color */
+    color: #EAF8EA;
+    position: relative;
+}
+
+.hero {
+    /* background-color: #1F201B; */
+    background-image: url('../images/PosterBackground.png');
+    background-blend-mode: multiply;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.hero-text {
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+.hero-heading, 
+.hero-description {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.75rem;
+    padding: 1.5rem;
+}
+.hero-description {
+    font-size: 1.75rem;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signup-btn {
+    background-color: #DD4B4B;
+}
+
+.trailer-show .img-container {
+    position: absolute;
+    right: 0;
+}
+
+.saved-show h2 {
+    text-align: right;
+}
+
+.img-container {
+    width: 40%;
+    margin: 2rem 5rem;
+    border: red solid 1px; /* Remove border when we have the gifs */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
     } else {
       res.render("landing", {
         logged_in: req.session.logged_in,
+        isLandingPage: true
       });
     }
 
