@@ -1,0 +1,23 @@
+/* Body Styling */
+body {
+    background-color: #1F201B;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    width: 7rem;
+    padding: 0.5em 1em;
+    background: #558754;
+    border-radius: 3px;
+    color: #000;
+}
+
+.brand {
+    color:#558754;
+    padding: 1.5rem 1rem;
+}
+
+.brand:hover {
+    color: #558754;
+}
