@@ -77,6 +77,76 @@ router.get("/profile/saved", async (req, res) => {
   }
 });
 
+
+
+// Maybe Movies | http://localhost:3001/profile/maybe
+router.get("/profile/maybe", async (req, res) => {
+  try {
+
+    console.log(`UserID: ${req.session.user_id}`);
+    // Find the logged in user based on the session ID
+    const saveData = await Flag.findAll({
+      include: [
+        {
+          model: Movie
+        },
+
+      ],
+      where: {
+        user_id: req.session.user_id,
+        flag: 2
+      }
+    });
+
+    // Serialize data
+    const movies = saveData.map((element) => element.get({ plain: true }));
+    console.log(movies);
+
+    // Render the list of movies
+    res.render('maybe', {
+      movies
+    })
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Pass Movies | http://localhost:3001/profile/pass
+router.get("/profile/pass", async (req, res) => {
+  try {
+
+    console.log(`UserID: ${req.session.user_id}`);
+    // Find the logged in user based on the session ID
+    const saveData = await Flag.findAll({
+      include: [
+        {
+          model: Movie
+        },
+
+      ],
+      where: {
+        user_id: req.session.user_id,
+        flag: 0
+      }
+    });
+
+    // Serialize data
+    const movies = saveData.map((element) => element.get({ plain: true }));
+    console.log(movies);
+
+    // Render the list of movies
+    res.render('pass', {
+      movies
+    })
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
