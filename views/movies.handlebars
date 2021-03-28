@@ -1,0 +1,10 @@
+<h1>Movies Page</h1>
+
+{{#each movies as |movie| }}
+<div class=" div-poster" id={{title}}>
+    <a href="/movies/{{title}}">
+        <img class="img-poster" src={{poster}} alt="movie poster" width="150">
+    </a>
+</div>
+
+{{/each}}
