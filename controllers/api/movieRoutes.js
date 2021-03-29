@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
 
 // Create/Update FlagMovie Route | http://localhost:3001/api/movies/flag
 router.post('/flag', async (req, res) => {
+    console.log(`FLAG ROUTE HIT`);
     try {
         const queryUM = await Flag.findAll({
             where: {
