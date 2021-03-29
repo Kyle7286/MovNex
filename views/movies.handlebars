@@ -1,10 +1,21 @@
-<h1>Movies Page</h1>
+<h1 class="header-flag">Movies</h1>
 
-{{#each movies as |movie| }}
-<div class=" div-poster" id={{title}}>
-    <a href="/movies/{{title}}">
-        <img class="img-poster" src={{poster}} alt="movie poster" width="150">
-    </a>
+<div class="container container-posters">
+    <div class="row row-posters">
+        <div class="col col-poster">
+
+            {{#each movies as |movie| }}
+            <div class="grand-parent">
+                <div class="div-poster gradient-border" movie-id={{id}}>
+                    <div><i class="fas fa-times"></i></div>
+                    <a href="/movies/{{title}}">
+                        <img class="img-poster" src={{poster}} alt="movie poster" width="150" height="250">
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
 </div>
-
-{{/each}}
