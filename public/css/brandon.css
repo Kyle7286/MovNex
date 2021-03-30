@@ -11,18 +11,20 @@ The idea is to consolidate this styling when we get together as a team and strea
     margin: 4rem;
 }
 
+/* POSTER DIV STYLING */
 .grand-parent {
     display: inline-block;
     position: relative;
-}
-.div-poster {
     padding: 5px;
 }
+
+/* Show the Delete icon when hovering over poster */
 .div-poster:hover .fas {
     display: block;
 }
 
-.div-poster .fas {
+/* Delete button */
+.div-poster .fa-times {
     position: absolute;
     right:-2px;
     top: -5px;
@@ -32,47 +34,45 @@ The idea is to consolidate this styling when we get together as a team and strea
     border-radius: 50%;
     display: none;
 }
-.fas:hover {
-    font-size: 25px;
-    /* color: black; */
-    cursor: pointer
-}
-
-.fas:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-
-.gradient-border:hover {
-  --borderWidth: 3px;
-  background: #1D1F20;
-  position: relative;
-  border-radius: var(--borderWidth);
-}
-.gradient-border:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 1.5s ease alternate infinite;
-  background-size: 300% 300%;
-}
-
-
+    .div-poster .fa-times:hover {
+        font-size: 25px;
+        /* color: black; */
+        cursor: pointer
+    }
+    .div-poster .fa-times:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+/* Animated Color Boder */
 @keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
+    .gradient-border:hover {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+    }
+    .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 1.5s ease alternate infinite;
+    background-size: 300% 300%;
+    }
+    /* Animated Poster on hover */
