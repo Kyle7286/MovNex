@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
 
 // Create/Update FlagMovie Route | http://localhost:3001/api/movies/flag
 router.post('/flag', async (req, res) => {
+    console.log(`FLAG ROUTE HIT`);
     try {
         const queryUM = await Flag.findAll({
             where: {
@@ -36,7 +37,7 @@ router.post('/flag', async (req, res) => {
         if (queryUM == "") {
             console.log(`UM association not found! Will create one now...`);
             const newFlag = await Flag.create({
-                user_id: req.body.user_id,
+                user_id: req.session.user_id,
                 movie_id: req.body.movie_id,
                 flag: req.body.flag
             });

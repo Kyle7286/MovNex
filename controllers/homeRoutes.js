@@ -47,7 +47,7 @@ router.get("/profile", withAuth, async (req, res) => {
 router.get("/profile/saved", async (req, res) => {
   try {
 
-    console.log(`UserID: ${req.session.user_id}`);
+    // console.log(`UserID: ${req.session.user_id}`);
     // Find the logged in user based on the session ID
     const saveData = await Flag.findAll({
       include: [
@@ -64,7 +64,7 @@ router.get("/profile/saved", async (req, res) => {
 
     // Serialize data
     const movies = saveData.map((element) => element.get({ plain: true }));
-    console.log(movies);
+    // console.log(movies);
 
     // Render the list of movies
     res.render('saved', {
@@ -72,7 +72,6 @@ router.get("/profile/saved", async (req, res) => {
     })
 
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });

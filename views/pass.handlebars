@@ -1,10 +1,21 @@
-<h1>Ignore Movies</h1>
+<h1 class="header-flag">Pass</h1>
 
-{{#each movies as |movie| }}
-<div class=" div-poster" id={{id}}>
-    <a href="/movies/{{movie.movie.title}}">
-        <img class="img-poster" src={{movie.movie.poster}} alt="movieposter" width="150">
-    </a>
+<div class="container container-posters">
+    <div class="row row-posters">
+        <div class="col col-poster">
+
+            {{#each movies as |element| }}
+            <div class="grand-parent"> 
+                <div class="div-poster gradient-border" movie-id={{id}}>
+                    <div><i class="fas fa-times"></i></div>
+                    <a href="/movies/{{element.movie.title}}">
+                        <img class="img-poster" src={{element.movie.poster}} alt="movie poster" width="150" height="250">
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
 </div>
-
-{{/each}}

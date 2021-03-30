@@ -1,0 +1,78 @@
+/* 
+This file contains styling from Brandon for the items he works on.
+The idea is to consolidate this styling when we get together as a team and streamline the solution
+*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+
+.header-flag {
+    color: white;
+    text-align: center;
+    margin: 4rem;
+}
+
+/* POSTER DIV STYLING */
+.grand-parent {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+
+/* Show the Delete icon when hovering over poster */
+.div-poster:hover .fas {
+    display: block;
+}
+
+/* Delete button */
+.div-poster .fa-times {
+    position: absolute;
+    right:-2px;
+    top: -5px;
+    font-size: 20px;
+    overflow: visible;
+    color: red;
+    border-radius: 50%;
+    display: none;
+}
+    .div-poster .fa-times:hover {
+        font-size: 25px;
+        /* color: black; */
+        cursor: pointer
+    }
+    .div-poster .fa-times:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+/* Animated Color Boder */
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    .gradient-border:hover {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+    }
+    .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 1.5s ease alternate infinite;
+    background-size: 300% 300%;
+    }
+    /* Animated Poster on hover */
