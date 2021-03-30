@@ -20,4 +20,12 @@ Movie.belongsToMany(User, {
     as: 'y'
 });
 
+Flag.belongsTo(Movie, {
+    foreignKey:'movie_id'
+})
+
+// Movie.belongsTo(Flag, {
+//     foreignKey:'movie_id'
+// })
+
 module.exports = { User, Movie, Flag };
