@@ -7,7 +7,10 @@ const _ = require('underscore');
 
 router.get("/theater", async (req, res) => {
     try {
-        res.render('theater')
+        res.render('theater', {
+            logged_in: req.session.logged_in,
+            theater: true
+        })
 
     } catch (e) {
         res.status(500).json(err);
@@ -29,6 +32,8 @@ router.get("/movies/", async (req, res) => {
         // Render Movie Page and send it the data
         res.render('movies', {
             movies,
+            logged_in: req.session.logged_in,
+            page: "movies"
         })
     } catch (e) {
         console.log(e);
@@ -52,6 +57,8 @@ router.get("/movies/:title", async (req, res) => {
         // Render Movie Page and send it the data
         res.render('movieinfo', {
             ...data,
+            logged_in: req.session.logged_in,
+            page: "movieinfo"
         })
     } catch (e) {
         console.log(e);
