@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="/css/landingPage.css">
   <link rel="stylesheet" href="/css/theater.css">
   <link rel="stylesheet" href="/css/brandon.css">
+  <link rel="stylesheet" href="/css/devante.css">
+  <link rel="stylesheet" href="/css/signup.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/profile.css">
+  {{!--
+  <link rel="stylesheet" href="/css/theater.css"> --}}
 
 
 </head>
@@ -27,7 +33,7 @@
     <nav>
       <!-- Conditionally render login or logout links -->
       {{#if logged_in}}
-      <a href="/profile">profile</a> |
+      <a class="btn btn-primary" href="/profile">profile</a> |
       <button class="btn btn-primary" id="logout">logout</button>
       {{else}}
       <a href="/login">login</a>

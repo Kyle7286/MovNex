@@ -7,16 +7,25 @@
     border: 0;
 }
 
+.theater-container {
+    position: relative;
+}
+
 .trailer-container {
     position: relative;
     overflow: hidden;
     width: 100%;
+    height: 100%;
     padding-top: 56.25%;
 }
 
 .button-container {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .movie-name {
