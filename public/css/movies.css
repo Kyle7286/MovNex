@@ -1,0 +1,7 @@
+.div-poster{
+    display:grid;
+    grid-template-columns: 20px 1fr 20px;
+}
+
+
+/*  Need help displaying this as a grid */
