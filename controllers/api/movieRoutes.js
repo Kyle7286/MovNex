@@ -24,10 +24,12 @@ router.get("/", async (req, res) => {
 // Create/Update FlagMovie Route | http://localhost:3001/api/movies/flag
 router.post('/flag', async (req, res) => {
     console.log(`FLAG ROUTE HIT`);
+    console.log(req.body);
+    console.log(req.session.user_id);
     try {
         const queryUM = await Flag.findAll({
             where: {
-                user_id: req.body.user_id,
+                user_id: req.session.user_id,
                 movie_id: req.body.movie_id,
             }
         });
@@ -48,7 +50,7 @@ router.post('/flag', async (req, res) => {
                 flag: req.body.flag
             }, {
                 where: {
-                    user_id: req.body.user_id,
+                    user_id: req.session.user_id,
                     movie_id: req.body.movie_id
                 },
             });
