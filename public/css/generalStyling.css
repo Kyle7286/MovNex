@@ -8,9 +8,12 @@ body {
     text-align: center;
     width: 7rem;
     padding: 0.5em 1em;
-    background: #558754;
+    background: #1F201B;
+    opacity: 90%;
     border-radius: 3px;
-    color: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
 }
 
 .brand {
@@ -20,4 +23,14 @@ body {
 
 .brand:hover {
     color: #558754;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
 }
