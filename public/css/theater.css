@@ -21,10 +21,11 @@
 
 .button-container {
     position: absolute;
+    width: 100%;
     margin: 0 auto;
-    top: 30%;
+    bottom: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .movie-name {
