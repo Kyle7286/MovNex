@@ -37,6 +37,7 @@ router.get("/profile", withAuth, async (req, res) => {
     res.render("profile", {
       ...user,
       logged_in: true,
+      page: "profile"
     });
   } catch (err) {
     res.status(500).json(err);
@@ -68,7 +69,9 @@ router.get("/profile/saved", async (req, res) => {
 
     // Render the list of movies
     res.render('saved', {
-      movies
+      movies,
+      logged_in: req.session.logged_in,
+      saved: true
     })
 
   } catch (err) {
@@ -103,7 +106,9 @@ router.get("/profile/maybe", async (req, res) => {
 
     // Render the list of movies
     res.render('maybe', {
-      movies
+      movies,
+      logged_in: req.session.logged_in,
+      page: "maybe"
     })
 
   } catch (err) {
@@ -137,7 +142,9 @@ router.get("/profile/pass", async (req, res) => {
 
     // Render the list of movies
     res.render('pass', {
-      movies
+      movies,
+      logged_in: req.session.logged_in,
+      pass: true
     })
 
   } catch (err) {

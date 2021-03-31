@@ -31,7 +31,6 @@ The idea is to consolidate this styling when we get together as a team and strea
     font-size: 20px;
     overflow: visible;
     color: red;
-    border-radius: 50%;
     display: none;
 }
     .div-poster .fa-times:hover {
@@ -40,7 +39,22 @@ The idea is to consolidate this styling when we get together as a team and strea
         cursor: pointer
     }
     .div-poster .fa-times:active {
-        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+.fa-check {
+    position: absolute;
+    left:-2px;
+    top: -5px;
+    font-size: 20px;
+    overflow: visible;
+    color: green;
+    display: none;
+}
+    .div-poster .fa-check:hover {
+        font-size: 25px;
+        cursor: pointer
+    }
+    .div-poster .fa-check:active {
         transform: translateY(4px);
     }
     
@@ -56,6 +70,7 @@ The idea is to consolidate this styling when we get together as a team and strea
         background-position: 0% 50%;
     }
 }
+  /* Animated Poster on hover */
     .gradient-border:hover {
     --borderWidth: 3px;
     background: #1D1F20;
@@ -75,4 +90,4 @@ The idea is to consolidate this styling when we get together as a team and strea
     animation: animatedgradient 1.5s ease alternate infinite;
     background-size: 300% 300%;
     }
-    /* Animated Poster on hover */
+  
