@@ -27,14 +27,16 @@ router.post('/flag', async (req, res) => {
     console.log(req.body);
     console.log(req.session.user_id);
     try {
+        // check if there is a flag or not in the database
         const queryUM = await Flag.findAll({
             where: {
                 user_id: req.session.user_id,
                 movie_id: req.body.movie_id,
             }
         });
+        console.log('====================');
         console.log(queryUM);
-
+        console.log('====================');
         // Create movie is req doesnt exist already, else update it if it does
         if (queryUM == "") {
             console.log(`UM association not found! Will create one now...`);

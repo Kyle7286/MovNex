@@ -4,23 +4,17 @@ const maybeBtn = document.getElementById('maybe-btn');
 const movieTrailer = document.getElementById('movie-trailer');
 
 
-let counter = 0;
 
 
 
-function changeMovie(moviesArray) {
-    const movie = moviesArray[counter]
+
+function changeMovie(movie) {
     const movieURL = movie.trailer;
     movieTrailer.src = getYoutubeLink(movieURL);
-    if (counter >= moviesArray.length - 1) {
-        counter = 0;
-        return
-    }
-    counter++;
 }
 
 async function flagMovie(flag, movie_id) {
-
+    console.log(movie_id);
     const response = await fetch('/api/movies/flag', {
         method: 'POST',
         body: JSON.stringify({
@@ -39,18 +33,54 @@ function getYoutubeLink(id) {
 };
 
 function start(movies) {
-    const movie_id = movies[counter].id;
+    // Set counter
+    let counter = 0;
+    //set first movie
+    let currentMovie = movies[counter];
+    changeMovie(currentMovie);
+    let movie_id = currentMovie.id;
+
+    // TODO: function to add event listeners less dryly?
+    // addSomething(saveBtn, 1);
+    // addSomething(ignoreBtn, 0);
+    // addSomething(maybeBtn, 2);
+
+    // function addSomething(flag) {
+    
+    // }
+
     saveBtn.addEventListener('click', (e) => {
         flagMovie(1, movie_id);
-        changeMovie(movies);
+        if (counter >= movies.length - 1) {
+            counter = 0;
+            return
+        }
+        counter++;
+        currentMovie = movies[counter];
+        movie_id = currentMovie.id;
+        changeMovie(currentMovie);
     });
     ignoreBtn.addEventListener('click', (e) => {
         flagMovie(0, movie_id);
-        changeMovie(movies);
+        if (counter >= movies.length - 1) {
+            counter = 0;
+            return
+        }
+        counter++;
+        currentMovie = movies[counter];
+        movie_id = currentMovie.id;
+        changeMovie(currentMovie);
     });
     maybeBtn.addEventListener('click', (e) => {
         flagMovie(2, movie_id);
-        changeMovie(movies);
+        if (counter >= movies.length - 1) {
+            counter = 0;
+            return
+        }
+        counter++;
+        currentMovie = movies[counter];
+        movie_id = currentMovie.id;
+        changeMovie(currentMovie);
     });
 }
 
