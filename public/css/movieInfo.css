@@ -1,0 +1,25 @@
+.title{
+    text-align: center;
+    width: 100%;
+    color:#558754;;
+}
+
+.content-containter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {  
+    max-width: 100%;
+}
+
+.poster{
+    padding-left: 5%;
+    flex-basis:40%
+}
+
+.text-content{
+    padding-left: 10px;
+    color: #558754;;
+}
