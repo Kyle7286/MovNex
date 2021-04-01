@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Movie, User, Flag } = require("../../models");
 const _ = require('underscore')
+const withAuth = require('../../utils/auth');
 
 // Get Movie Array JSON | http://localhost:3001/api/movies
 router.get("/", async (req, res) => {
@@ -22,11 +23,10 @@ router.get("/", async (req, res) => {
 })
 
 // Create/Update FlagMovie Route | http://localhost:3001/api/movies/flag
-router.post('/flag', async (req, res) => {
-    console.log(`FLAG ROUTE HIT`);
-    console.log(req.body);
-    console.log(req.session.user_id);
+router.post('/flag', withAuth, async (req, res) => {
     try {
+        
+        console.log(req.body);
         // check if there is a flag or not in the database
         const queryUM = await Flag.findAll({
             where: {
@@ -34,9 +34,6 @@ router.post('/flag', async (req, res) => {
                 movie_id: req.body.movie_id,
             }
         });
-        console.log('====================');
-        console.log(queryUM);
-        console.log('====================');
         // Create movie is req doesnt exist already, else update it if it does
         if (queryUM == "") {
             console.log(`UM association not found! Will create one now...`);
@@ -64,6 +61,32 @@ router.post('/flag', async (req, res) => {
     }
 });
 
+// Delete UserMovieFlag from DB | http://localhost:3001/api/movies/flag
+router.delete("/flag", withAuth, async (req, res) => {
+    try {
+        console.log(`BODY: ${req.body}`);
+        console.log(`USER: ${req.session.user_id}`);
 
+        // Query all the movie data
+        const flagData = await Flag.destroy({
+            where: {
+                movie_id: req.body.movie_id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        // If data not found, respond back with error
+        if (!flagData) {
+            res.status(404).json({ message: 'No association found with this user id!' });
+            return;
+        }
+
+        // Send a successfull response
+        res.status(200).json(flagData);
+    } catch (e) {
+        console.log(e);
+        res.status(500).json(e);
+    }
+})
 
 module.exports = router;
