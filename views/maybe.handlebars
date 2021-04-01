@@ -5,11 +5,14 @@
         <div class="col col-poster">
 
             {{#each movies as |element| }}
-            <div class="grand-parent"> 
-                <div class="div-poster gradient-border" movie-id={{id}}>
+            <div class="grand-parent">
+                <div class="div-poster gradient-border" movie-id={{movie_id}}>
                     <div><i class="fas fa-times"></i></div>
+                    <div><i class="fas fa-check"></i></div>
+                    <div><i class="fas fa-thumbs-down"></i></div>
                     <a href="/movies/{{element.movie.title}}">
-                        <img class="img-poster" src={{element.movie.poster}} alt="movie poster" width="150" height="250">
+                        <img class="img-poster" src={{element.movie.poster}} alt="movie poster" width="150"
+                            height="250">
                     </a>
                 </div>
             </div>
@@ -19,3 +22,6 @@
     </div>
 
 </div>
+
+
+<script src="/js/poster.js" defer></script>

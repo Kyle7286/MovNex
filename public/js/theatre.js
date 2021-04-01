@@ -3,11 +3,6 @@ const ignoreBtn = document.getElementById('ignore-btn');
 const maybeBtn = document.getElementById('maybe-btn');
 const movieTrailer = document.getElementById('movie-trailer');
 
-
-
-
-
-
 function changeMovie(movie) {
     const movieURL = movie.trailer;
     movieTrailer.src = getYoutubeLink(movieURL);

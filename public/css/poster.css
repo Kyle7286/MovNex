@@ -57,7 +57,41 @@ The idea is to consolidate this styling when we get together as a team and strea
     .div-poster .fa-check:active {
         transform: translateY(4px);
     }
-    
+
+.fa-question {
+    position: absolute;
+    left:-2px;
+    bottom: -5px;
+    font-size: 20px;
+    overflow: visible;
+    color: yellow;
+    display: none;
+}
+    .div-poster .fa-question:hover {
+        font-size: 25px;
+        cursor: pointer
+    }
+    .div-poster .fa-question:active {
+        transform: translateY(4px);
+    }
+
+.fa-thumbs-down {
+    position: absolute;
+    right:-2px;
+    bottom: -5px;
+    font-size: 20px;
+    overflow: visible;
+    color: orange;
+    display: none;
+}
+    .div-poster .fa-thumbs-down:hover {
+        font-size: 25px;
+        cursor: pointer
+    }
+    .div-poster .fa-thumbs-down:active {
+        transform: translateY(4px);
+    }
+
 /* Animated Color Boder */
 @keyframes animatedgradient {
     0% {

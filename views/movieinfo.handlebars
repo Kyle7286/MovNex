@@ -1,7 +1,18 @@
-<h1>Movie Info</h1>
-<div>
-    <img src={{poster}} alt="poster" width="500">
-    <p>{{year}}</p>
-    <p>{{plot}}</p>
-    <p>{{genre}}</p>
+<link rel="stylesheet" href="/css/movieinfo.css">
+
+<h1 class="page-h1">Movie Details</h1>
+
+<div class="card">
+    <div class="row">
+        <div class="col-5">
+            <img src={{poster}} alt="poster">
+        </div>
+        <div class="col-7">
+            <div class="card-body">
+                <h4 class="card-title">{{title}} | {{year}}</h4>
+                <p class="card-text">{{plot}}</p>
+                <p class="card-text"><small class="text-muted">{{genre}}</small></p>
+            </div>
+        </div>
+    </div>
 </div>
