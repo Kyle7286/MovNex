@@ -1,25 +1,27 @@
-.title{
+.page-h1 {
     text-align: center;
+    color:white;
+    margin-bottom: 8rem;
+    font-weight: bold;
+}
+
+.card {
+    width: 75%; 
+    margin:auto;
+    border: none;
+    background-color: #1F201B;
+}
+
+img {
     width: 100%;
-    color:#558754;;
+}
+.card-body {
+    margin: auto;
+    padding: auto;
+    color: white;
+    margin-top: 8rem;
 }
 
-.content-containter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-img {  
-    max-width: 100%;
-}
 
-.poster{
-    padding-left: 5%;
-    flex-basis:40%
-}
 
-.text-content{
-    padding-left: 10px;
-    color: #558754;;
-}
