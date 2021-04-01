@@ -179,7 +179,7 @@ router.get("/profile/seen",  withAuth, async (req, res) => {
     res.render('seen', {
       movies,
       logged_in: req.session.logged_in,
-      pass: true
+      seen: true
     })
 
   } catch (err) {
