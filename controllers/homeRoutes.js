@@ -45,7 +45,7 @@ router.get("/profile", withAuth, async (req, res) => {
 });
 
 // Saved Movies | http://localhost:3001/profile/saved
-router.get("/profile/saved", async (req, res) => {
+router.get("/profile/saved", withAuth, async (req, res) => {
   try {
 
     // console.log(`UserID: ${req.session.user_id}`);
@@ -55,7 +55,6 @@ router.get("/profile/saved", async (req, res) => {
         {
           model: Movie
         },
-
       ],
       where: {
         user_id: req.session.user_id,
@@ -65,7 +64,7 @@ router.get("/profile/saved", async (req, res) => {
 
     // Serialize data
     const movies = saveData.map((element) => element.get({ plain: true }));
-    // console.log(movies);
+    console.log(movies);
 
     // Render the list of movies
     res.render('saved', {
@@ -82,7 +81,7 @@ router.get("/profile/saved", async (req, res) => {
 
 
 // Maybe Movies | http://localhost:3001/profile/maybe
-router.get("/profile/maybe", async (req, res) => {
+router.get("/profile/maybe", withAuth,  async (req, res) => {
   try {
 
     console.log(`UserID: ${req.session.user_id}`);
@@ -118,7 +117,7 @@ router.get("/profile/maybe", async (req, res) => {
 });
 
 // Pass Movies | http://localhost:3001/profile/pass
-router.get("/profile/pass", async (req, res) => {
+router.get("/profile/pass",  withAuth, async (req, res) => {
   try {
 
     console.log(`UserID: ${req.session.user_id}`);
@@ -153,7 +152,43 @@ router.get("/profile/pass", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
+// Seen Movies | http://localhost:3001/profile/seen
+router.get("/profile/seen",  withAuth, async (req, res) => {
+  try {
+
+    console.log(`UserID: ${req.session.user_id}`);
+    // Find the logged in user based on the session ID
+    const saveData = await Flag.findAll({
+      include: [
+        {
+          model: Movie
+        },
+
+      ],
+      where: {
+        user_id: req.session.user_id,
+        flag: 3
+      }
+    });
+
+    // Serialize data
+    const movies = saveData.map((element) => element.get({ plain: true }));
+    console.log(movies);
+
+    // Render the list of movies
+    res.render('seen', {
+      movies,
+      logged_in: req.session.logged_in,
+      pass: true
+    })
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/login",  (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect("/theater");
