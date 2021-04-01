@@ -25,6 +25,8 @@ router.get("/", async (req, res) => {
 // Create/Update FlagMovie Route | http://localhost:3001/api/movies/flag
 router.post('/flag', withAuth, async (req, res) => {
     try {
+        
+        console.log(req.body);
         // check if there is a flag or not in the database
         const queryUM = await Flag.findAll({
             where: {

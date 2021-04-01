@@ -1,7 +1,7 @@
 // This file will contain the logic for handling the poster buttons
 console.log("Loaded POSTER.JS");
 
-// Remove the movie's flag associated from the folder/DB
+// X Button - Remove the movie's flag associated from the folder/DB
 const deleteUserFlag = async (e) => {
     // Prevent refreshing
     e.preventDefault();
@@ -27,12 +27,12 @@ const deleteUserFlag = async (e) => {
     });
 
     // Delete Poster from front end
-    $(posterClicked).parent().parent().remove();
+    $(posterClicked).parent().parent().parent().remove();
 }
 
 
-// Remove the movie's flag associated from the folder/DB
-const deleteUserFlag = async (e) => {
+// Check Button - Update the movie's flag associated from the folder/DB
+const seenUserFlag = async (e) => {
     // Prevent refreshing
     e.preventDefault();
 
@@ -47,9 +47,10 @@ const deleteUserFlag = async (e) => {
 
     // Delete the row from the Flag DB | Needs movie_ID, user_id    
     const response = await fetch('/api/movies/flag', {
-        method: 'DELETE',
+        method: 'post',
         body: JSON.stringify({
-            movie_id: movieIDSelected
+            movie_id: movieIDSelected,
+            flag: 3
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -57,9 +58,11 @@ const deleteUserFlag = async (e) => {
     });
 
     // Delete Poster from front end
-    $(posterClicked).parent().parent().remove();
+    $(posterClicked).parent().parent().parent().remove();
 }
+
+
 
 // Click Handlers for poster buttons
 $(".fa-times").click(deleteUserFlag);
-$(".fa-times").click(deleteUserFlag);
+$(".fa-check").click(seenUserFlag);

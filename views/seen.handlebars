@@ -6,7 +6,7 @@
 
             {{#each movies as |element| }}
             <div class="grand-parent"> 
-                <div class="div-poster gradient-border" movie-id={{id}}>
+                <div class="div-poster gradient-border" movie-id={{movie_id}}>
                     <div><i class="fas fa-times"></i></div>
                     <a href="/movies/{{element.movie.title}}">
                         <img class="img-poster" src={{element.movie.poster}} alt="movie poster" width="150" height="250">
