@@ -1,3 +1,26 @@
-.header{
-    color:#558754;
+.header {
+    text-align: center;
+    color: white;
+
+}
+.container-profile {
+    margin: auto;
+    /* background-color: violet; */
+}
+.profile-btn {
+    width: 200px;
+    height: 75px;
+    display: block;
+    padding-top: 1.5rem;
+    margin-right: 1rem;
+}
+
+h3 {
+    color: white;
+}
+
+span:hover {
+    border-right: none;
+    border-left: none;
+    border-top: none;
 }
