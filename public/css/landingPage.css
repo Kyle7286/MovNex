@@ -43,6 +43,7 @@ h2 {
 }
 .hero-description {
     font-size: 1.75rem;
+    text-align: center;
 }
 
 .btn-group {
@@ -91,7 +92,9 @@ img {
         font-size: 1.2rem;
         width: 60%;
     }
-
+    .hero-description {
+        width: 100%;
+    }
     .section-text {
         padding: 2rem;
     }
