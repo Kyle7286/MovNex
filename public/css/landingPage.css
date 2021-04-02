@@ -11,6 +11,7 @@ section {
     background: -webkit-linear-gradient(pink, purple);
     height: 1440px;
     width: 100%;
+    margin: auto;
 }
 
 
