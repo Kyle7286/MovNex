@@ -4,11 +4,15 @@ p {
 }
 
 section {
-    height: 100vh;
+    /* height: 100vh; */
     /* Font color */
     color: #EAF8EA;
     position: relative;
+    background: -webkit-linear-gradient(pink, purple);
+    height: 1440px;
+    width: 100%;
 }
+
 
 .hero {
     /* background-color: #1F201B; */
@@ -98,7 +102,7 @@ img {
         padding: 2rem;
     }
 
-    .trailer-show {
+    /* .trailer-show {
         margin-bottom: 20rem;
-    }
+    } */
 }
