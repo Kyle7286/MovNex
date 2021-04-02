@@ -9,7 +9,7 @@ section {
     color: #EAF8EA;
     position: relative;
     background: -webkit-linear-gradient(pink, purple);
-    height: 1440px;
+    height: 1280px;
     width: 100%;
     margin: auto;
 }
@@ -23,7 +23,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    height: 100vh;
     
 }
 
