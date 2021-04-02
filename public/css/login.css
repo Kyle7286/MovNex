@@ -1,8 +1,13 @@
 .header{
-    color:#558754;
+    color:white;
 }
 .form-group{
-    color:#558754;    
+    color:white;    
+}
+.input-group{
+    text-align: center;
+    display: inline-block;
+    margin-inline: 50%;
 }
 
 
