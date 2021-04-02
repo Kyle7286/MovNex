@@ -44,6 +44,9 @@ function start(movies) {
     
     // }
 
+// add froward and back buttons
+
+
     saveBtn.addEventListener('click', (e) => {
         flagMovie(1, movie_id);
         if (counter >= movies.length - 1) {

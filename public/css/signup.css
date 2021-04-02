@@ -4,6 +4,13 @@
 .form-group{
     color:white;    
 }
+.input-group{
+    text-align: center;
+    display: inline-block;
+    margin-inline: 50%;
+}
+
+
 
 .container-signup{
   margin: 0 auto;   

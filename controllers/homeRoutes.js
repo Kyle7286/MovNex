@@ -209,4 +209,48 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+//Change Email Page
+router.get("/change_email", withAuth, async (req, res) => {
+  try {
+    console.log(`UserID: ${req.session.user_id}`);
+
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render("change_email", {
+      ...user,
+      logged_in: true,
+      page: "change_email"
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Change Email Page
+router.get("/change_password", withAuth, async (req, res) => {
+  try {
+    console.log(`UserID: ${req.session.user_id}`);
+
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render("change_password", {
+      ...user,
+      logged_in: true,
+      page: "change_password"
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
